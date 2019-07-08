@@ -23,6 +23,10 @@
     // Do any additional setup after loading the view.
 }
 
+- (IBAction)didTapLogin:(id)sender {
+    [self loginUser];
+}
+
 - (void)loginUser {
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
