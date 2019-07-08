@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +60,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="didTapLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jMM-1v-YFm"/>
-                                    <segue destination="7aU-vB-9A7" kind="show" identifier="loginSegue" id="nN8-2r-gk3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -71,6 +70,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="rgR-kx-AlC" id="VTz-R1-Ydq"/>
                         <outlet property="usernameTextField" destination="ARo-JA-mYT" id="EMV-yc-FB3"/>
+                        <segue destination="2Fa-i7-ShB" kind="show" identifier="loginSegue" id="qBT-eG-q8D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -160,11 +160,35 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5Hy-d9-hnZ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Xag-2M-fqy"/>
+                    <navigationItem key="navigationItem" id="Xag-2M-fqy">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="3yr-Va-PgF">
+                            <connections>
+                                <action selector="didTapLogout:" destination="7aU-vB-9A7" id="M63-Ap-joF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ntx-vd-tsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="757" y="893"/>
+            <point key="canvasLocation" x="757" y="1769"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DMy-om-cQi">
+            <objects>
+                <navigationController storyboardIdentifier="TimelineViewController" automaticallyAdjustsScrollViewInsets="NO" id="2Fa-i7-ShB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WkX-na-rTS">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7aU-vB-9A7" kind="relationship" relationship="rootViewController" id="vRX-c6-ncr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BW3-Cr-R64" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756.52173913043487" y="892.66304347826099"/>
         </scene>
     </scenes>
 </document>

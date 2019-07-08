@@ -27,6 +27,15 @@
     
     [Parse initializeWithConfiguration:config];
     
+    // Code to initialize Parse
+    // (See above section 'Parse `initializeWithConfiguration` vs `setApplicationId`', if you have not already set it up)
+
+    if (PFUser.currentUser) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"TimelineViewController"];
+    }
+    
     return YES;
 }
 
