@@ -31,6 +31,9 @@
     newPost.caption = caption;
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
+    newPost.userID = PFUser.currentUser.username;
+    NSLog(@"%@", PFUser.currentUser.username);
+    
     
     [newPost saveInBackgroundWithBlock: completion];
 }

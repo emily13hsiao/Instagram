@@ -51,7 +51,8 @@
     
     cell.post = post;
     
-    cell.usernameLabel.text = post.userID;
+    cell.usernameLabel.text = post.author.username;
+    NSLog(@"%@",post.userID);
     
     PFFileObject *img = post.image;
     [img getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
