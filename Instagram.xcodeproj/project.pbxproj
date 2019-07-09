@@ -20,6 +20,8 @@
 		FCB6978822D4007600C0891C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB6978722D4007600C0891C /* LoginViewController.m */; };
 		FCB6978B22D4035200C0891C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB6978A22D4035200C0891C /* RegisterViewController.m */; };
 		FCB6979122D4056A00C0891C /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB6979022D4056A00C0891C /* TimelineViewController.m */; };
+		FCB6979422D415EB00C0891C /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB6979322D415EB00C0891C /* ComposeViewController.m */; };
+		FCB6979822D4180C00C0891C /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB6979722D4180C00C0891C /* Post.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,10 @@
 		FCB6978A22D4035200C0891C /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		FCB6978F22D4056A00C0891C /* TimelineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
 		FCB6979022D4056A00C0891C /* TimelineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
+		FCB6979222D415EB00C0891C /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		FCB6979322D415EB00C0891C /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		FCB6979622D4180C00C0891C /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		FCB6979722D4180C00C0891C /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 		FCB6975222D3FAFC00C0891C /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				FCB6979522D417F900C0891C /* Objects */,
 				FCB6978522D4005F00C0891C /* View Controllers */,
 				FCB6975322D3FAFC00C0891C /* AppDelegate.h */,
 				FCB6975422D3FAFC00C0891C /* AppDelegate.m */,
@@ -186,8 +193,19 @@
 				FCB6978A22D4035200C0891C /* RegisterViewController.m */,
 				FCB6978F22D4056A00C0891C /* TimelineViewController.h */,
 				FCB6979022D4056A00C0891C /* TimelineViewController.m */,
+				FCB6979222D415EB00C0891C /* ComposeViewController.h */,
+				FCB6979322D415EB00C0891C /* ComposeViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FCB6979522D417F900C0891C /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				FCB6979622D4180C00C0891C /* Post.h */,
+				FCB6979722D4180C00C0891C /* Post.m */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,8 +431,10 @@
 				FCB6976322D3FAFD00C0891C /* main.m in Sources */,
 				FCB6975522D3FAFC00C0891C /* AppDelegate.m in Sources */,
 				FCB6978822D4007600C0891C /* LoginViewController.m in Sources */,
+				FCB6979422D415EB00C0891C /* ComposeViewController.m in Sources */,
 				FCB6978B22D4035200C0891C /* RegisterViewController.m in Sources */,
 				FCB6979122D4056A00C0891C /* TimelineViewController.m in Sources */,
+				FCB6979822D4180C00C0891C /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
