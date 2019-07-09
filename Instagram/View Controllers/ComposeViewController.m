@@ -7,6 +7,7 @@
 //
 
 #import "ComposeViewController.h"
+#import "Post.h"
 
 @interface ComposeViewController ()
 
@@ -37,7 +38,8 @@
  **/
 
 - (IBAction)didTapPost:(id)sender {
-    
+    [Post postUserImage:self.image withCaption:self.captionLabel.text withCompletion:nil];
+     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
