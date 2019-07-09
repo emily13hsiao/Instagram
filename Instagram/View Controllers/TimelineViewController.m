@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *posts;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 
 @end
@@ -25,6 +26,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -135,6 +140,7 @@
         if (posts) {
             self.posts = [[NSArray alloc] initWithArray:posts];
             [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
         }
         else {
             NSLog(@"Error fetching posts.");
