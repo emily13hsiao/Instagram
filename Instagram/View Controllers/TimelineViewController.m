@@ -10,8 +10,14 @@
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
 #import "ComposeViewController.h"
+#import "Post.h"
+#import "PostCell.h"
 
-@interface TimelineViewController ()
+@interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *posts;
+
 
 @end
 
@@ -19,8 +25,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    [self fetchPosts];
+    
     // Do any additional setup after loading the view.
 }
+
+//TABLEVIEW STUFF.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.posts.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    Post *post = self.posts[indexPath.row];
+    
+    cell.post = post;
+    
+    cell.usernameLabel.text = post.userID;
+    
+    PFFileObject *img = post.image;
+    [img getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        UIImage *imageToLoad = [UIImage imageWithData:imageData];
+        cell.photo = imageToLoad;
+        [cell.photoView setImage:imageToLoad];
+    }];
+    
+    cell.captionLabel.text = post.caption;
+    
+    return cell;
+}
+
+//TODO: DELETE LATER AFTER AUTOLAYOUT.
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 500;
+}
+
+//TAP BUTTON STUFF.
 
 - (IBAction)didTapLogout:(id)sender {
     //FIX THIS TO PRESENT LOGIN VIEW CONTROLLER.
@@ -47,6 +92,7 @@
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
+//IMAGEPICKER STUFF.
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     // Get the image captured by the UIImagePickerController
@@ -76,6 +122,25 @@
     return newImage;
 }
 
+//FETCH POSTS
+- (void)fetchPosts {
+    // construct PFQuery
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+    
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            self.posts = [[NSArray alloc] initWithArray:posts];
+            [self.tableView reloadData];
+        }
+        else {
+            NSLog(@"Error fetching posts.");
+        }
+    }];
+}
 
 #pragma mark - Navigation
 

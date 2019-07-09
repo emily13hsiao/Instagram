@@ -22,6 +22,7 @@
 		FCB6979122D4056A00C0891C /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB6979022D4056A00C0891C /* TimelineViewController.m */; };
 		FCB6979422D415EB00C0891C /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB6979322D415EB00C0891C /* ComposeViewController.m */; };
 		FCB6979822D4180C00C0891C /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB6979722D4180C00C0891C /* Post.m */; };
+		FCB6979E22D551B300C0891C /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB6979D22D551B300C0891C /* PostCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		FCB6979322D415EB00C0891C /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		FCB6979622D4180C00C0891C /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		FCB6979722D4180C00C0891C /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		FCB6979C22D551B300C0891C /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		FCB6979D22D551B300C0891C /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +207,8 @@
 			children = (
 				FCB6979622D4180C00C0891C /* Post.h */,
 				FCB6979722D4180C00C0891C /* Post.m */,
+				FCB6979C22D551B300C0891C /* PostCell.h */,
+				FCB6979D22D551B300C0891C /* PostCell.m */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -431,6 +436,7 @@
 				FCB6976322D3FAFD00C0891C /* main.m in Sources */,
 				FCB6975522D3FAFC00C0891C /* AppDelegate.m in Sources */,
 				FCB6978822D4007600C0891C /* LoginViewController.m in Sources */,
+				FCB6979E22D551B300C0891C /* PostCell.m in Sources */,
 				FCB6979422D415EB00C0891C /* ComposeViewController.m in Sources */,
 				FCB6978B22D4035200C0891C /* RegisterViewController.m in Sources */,
 				FCB6979122D4056A00C0891C /* TimelineViewController.m in Sources */,
