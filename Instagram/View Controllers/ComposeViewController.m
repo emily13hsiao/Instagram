@@ -31,6 +31,8 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+//Remove keyboard.
+
 /*
 #pragma mark - Navigation
 

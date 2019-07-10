@@ -66,11 +66,6 @@
     return cell;
 }
 
-//TODO: DELETE LATER AFTER AUTOLAYOUT.
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 500;
-}
-
 //TAP BUTTON STUFF.
 
 - (IBAction)didTapLogout:(id)sender {
