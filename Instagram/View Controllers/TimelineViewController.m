@@ -62,6 +62,7 @@
     }];
     
     cell.captionLabel.text = post.caption;
+    cell.likesNumberLabel.text = [NSString stringWithFormat:@"%@ likes", post.likeCount];
     
     return cell;
 }
@@ -144,16 +145,21 @@
     }];
 }
 
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     if ([segue.identifier isEqualToString:@"toCompose"]) {
-        ComposeViewController *composeViewController = [segue destinationViewController];
         
-        // Pass the selected object to the new view controller.
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeViewController *composeViewController = (ComposeViewController*)navigationController.topViewController;
+        
+        // Pass the selected image to the new view controller.
         composeViewController.image = self.selectedImage;
+        
     } else if ([segue.identifier isEqualToString:@"toPost"]) {
         
         PostCell *tappedCell = sender;

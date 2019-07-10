@@ -36,9 +36,16 @@
     
     //set big image
     PFFileObject *img = self.post.image;
+    
+    // retain cycle will cause memory leaks
+    __weak __typeof(self) weakSelf = self;
     [img getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        __strong __typeof(self) strongSelf = weakSelf;
+        if (!strongSelf) {
+            return;
+        }
         UIImage *imageToLoad = [UIImage imageWithData:imageData];
-        [self.photoView setImage:imageToLoad];
+        [strongSelf.photoView setImage:imageToLoad];
     }];
 }
 

@@ -20,18 +20,35 @@
     
     //load image
     [self.pictureView setImage:self.image];
+    self.captionLabel.layer.borderWidth = 1;
+    self.captionLabel.layer.borderColor = [[UIColor lightGrayColor] CGColor];
 }
 
+/**
 - (IBAction)didTapPost:(id)sender {
     [Post postUserImage:self.image withCaption:self.captionLabel.text withCompletion:nil];
      [self dismissViewControllerAnimated:YES completion:nil];
 }
-
+ **/
+- (IBAction)didTapShare:(id)sender {
+    [Post postUserImage:self.image withCaption:self.captionLabel.text withCompletion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (IBAction)didTapBack:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+/**
+- (IBAction)didTapBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+ **/
+
 //Remove keyboard.
+- (IBAction)onTap:(id)sender {
+    [self.view endEditing:YES];
+}
+
 
 /*
 #pragma mark - Navigation
