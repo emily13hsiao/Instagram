@@ -12,6 +12,7 @@
 #import "ComposeViewController.h"
 #import "Post.h"
 #import "PostCell.h"
+#import "PostDetailsViewController.h"
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -52,7 +53,6 @@
     cell.post = post;
     
     cell.usernameLabel.text = post.author.username;
-    NSLog(@"%@",post.userID);
     
     PFFileObject *img = post.image;
     [img getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
@@ -106,7 +106,7 @@
     //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     // Set image and caption
-    self.selectedImage = [self resizeImage:originalImage withSize:CGSizeMake(50, 50)];
+    self.selectedImage = [self resizeImage:originalImage withSize:CGSizeMake(400, 400)];
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:^{
@@ -159,6 +159,14 @@
         
         // Pass the selected object to the new view controller.
         composeViewController.image = self.selectedImage;
+    } else if ([segue.identifier isEqualToString:@"toPost"]) {
+        
+        PostCell *tappedCell = sender;
+        Post *post = tappedCell.post;
+        
+        PostDetailsViewController *detailsPage = [segue destinationViewController];
+        detailsPage.post = post;
+        
     }
 }
 

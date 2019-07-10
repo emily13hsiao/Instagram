@@ -1,5 +1,5 @@
 //
-//  PostCell.h
+//  PostDetailsViewController.h
 //  Instagram
 //
 //  Created by emily13hsiao on 7/9/19.
@@ -8,19 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
-#import "Parse/Parse.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PostCell : UITableViewCell
+@interface PostDetailsViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
+@property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 
 @property (strong, nonatomic) Post *post;
-@property (strong, nonatomic) UIImage *photo;
-@property (strong, nonatomic) IBOutlet PFFileObject *photoImageView;
+
 
 @end
 

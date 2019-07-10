@@ -7,6 +7,7 @@
 //
 
 #import "PostCell.h"
+#import "Parse/Parse.h"
 
 @implementation PostCell
 
@@ -21,9 +22,13 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)didTapBack:(id)sender {
-    
+/**
+- (void)setPost:(Post *)post {
+    _post = post;
+    self.photoImageView.file = post[@"image"];
+    [self.photoImageView loadInBackground];
 }
+ **/
 
 
 @end
