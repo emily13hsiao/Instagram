@@ -20,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.loginButton.layer.cornerRadius = 8; // this value vary as per your desire
+    self.loginButton.clipsToBounds = YES;
     // Do any additional setup after loading the view.
 }
 
