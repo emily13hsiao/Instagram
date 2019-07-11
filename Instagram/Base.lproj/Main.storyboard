@@ -479,7 +479,7 @@
         <scene sceneID="DMy-om-cQi">
             <objects>
                 <navigationController storyboardIdentifier="TimelineViewController" automaticallyAdjustsScrollViewInsets="NO" id="2Fa-i7-ShB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Timeline" id="3pj-dw-OT8"/>
+                    <tabBarItem key="tabBarItem" title="Timeline" image="feed_tab" selectedImage="feed_tab" id="3pj-dw-OT8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WkX-na-rTS">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -534,7 +534,7 @@
         <scene sceneID="gpG-ux-uqO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="egF-uZ-582" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Your Posts" id="zMw-lT-Wgl"/>
+                    <tabBarItem key="tabBarItem" title="Your Posts" image="profile_tab" selectedImage="profile_tab" id="zMw-lT-Wgl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6gi-a5-e71">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -552,8 +552,10 @@
     </scenes>
     <resources>
         <image name="favor-icon" width="30" height="30"/>
+        <image name="feed_tab" width="25" height="25"/>
         <image name="insta_camera_btn" width="25" height="25"/>
         <image name="instagram words" width="914" height="362"/>
+        <image name="profile_tab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tWQ-JY-ssb"/>

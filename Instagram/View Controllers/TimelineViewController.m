@@ -127,7 +127,6 @@
 //FETCH POSTS
 - (void)fetchPosts {
     
-    NSLog(@"%lu", (unsigned long)self.tabBarController.selectedIndex);
     // construct PFQuery
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
