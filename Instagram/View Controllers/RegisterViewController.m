@@ -50,6 +50,10 @@
     [self.view endEditing:YES];
 }
 
+- (IBAction)didTapBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 /*
 #pragma mark - Navigation
 

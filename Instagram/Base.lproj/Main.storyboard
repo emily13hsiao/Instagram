@@ -112,6 +112,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfm-Dn-h5r">
+                                <rect key="frame" x="77" y="425" width="260" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="6Yg-mU-JVu"/>
+                                    <constraint firstAttribute="height" constant="30" id="W9o-OT-RMi"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAi-E1-9Wh">
                                 <rect key="frame" x="77" y="505" width="260" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -148,16 +158,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfm-Dn-h5r">
-                                <rect key="frame" x="77" y="425" width="260" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="260" id="6Yg-mU-JVu"/>
-                                    <constraint firstAttribute="height" constant="30" id="W9o-OT-RMi"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgG-8y-dhu">
+                                <rect key="frame" x="77" y="565" width="180" height="20"/>
+                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="14"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0H-Me-HVT">
+                                <rect key="frame" x="267" y="559" width="51" height="32"/>
+                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="14"/>
+                                <state key="normal" title="Sign in."/>
+                                <connections>
+                                    <action selector="didTapBack:" destination="zR4-vc-Wp1" eventType="touchUpInside" id="KO0-87-j6b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -165,11 +179,15 @@
                             <constraint firstItem="SD8-Ps-Y1o" firstAttribute="centerX" secondItem="3tn-U9-GN2" secondAttribute="centerX" id="4uw-oY-vOM"/>
                             <constraint firstItem="nvG-XI-UU5" firstAttribute="centerX" secondItem="3tn-U9-GN2" secondAttribute="centerX" id="5bk-sh-Vb0"/>
                             <constraint firstItem="SD8-Ps-Y1o" firstAttribute="top" secondItem="XnF-YM-ayT" secondAttribute="bottom" constant="56.329999999999998" id="7gd-yb-JU3"/>
+                            <constraint firstItem="PgG-8y-dhu" firstAttribute="leading" secondItem="TAi-E1-9Wh" secondAttribute="leading" id="BU2-Oa-gMF"/>
                             <constraint firstItem="TAi-E1-9Wh" firstAttribute="centerX" secondItem="3tn-U9-GN2" secondAttribute="centerX" id="DRM-SM-KwJ"/>
                             <constraint firstItem="Ff8-jK-gz7" firstAttribute="centerX" secondItem="3tn-U9-GN2" secondAttribute="centerX" id="GxO-xA-Zvy"/>
+                            <constraint firstItem="F0H-Me-HVT" firstAttribute="leading" secondItem="PgG-8y-dhu" secondAttribute="trailing" constant="10" id="JxH-6L-8ra"/>
                             <constraint firstItem="bfm-Dn-h5r" firstAttribute="top" secondItem="Ff8-jK-gz7" secondAttribute="bottom" constant="30" id="MjB-ps-lPp"/>
+                            <constraint firstItem="F0H-Me-HVT" firstAttribute="centerY" secondItem="PgG-8y-dhu" secondAttribute="centerY" id="dDd-Tc-FZ4"/>
                             <constraint firstItem="TAi-E1-9Wh" firstAttribute="top" secondItem="bfm-Dn-h5r" secondAttribute="bottom" constant="50" id="f10-1O-lFC"/>
                             <constraint firstItem="XnF-YM-ayT" firstAttribute="top" secondItem="nvG-XI-UU5" secondAttribute="bottom" constant="10" id="h4L-ah-lcE"/>
+                            <constraint firstItem="PgG-8y-dhu" firstAttribute="top" secondItem="TAi-E1-9Wh" secondAttribute="bottom" constant="30" id="i3a-4h-Y2f"/>
                             <constraint firstItem="bfm-Dn-h5r" firstAttribute="centerX" secondItem="3tn-U9-GN2" secondAttribute="centerX" id="jdg-Td-FJh"/>
                             <constraint firstItem="nvG-XI-UU5" firstAttribute="top" secondItem="TzO-Ya-474" secondAttribute="top" constant="71" id="mC0-Yx-PR9"/>
                             <constraint firstItem="XnF-YM-ayT" firstAttribute="centerX" secondItem="3tn-U9-GN2" secondAttribute="centerX" id="tGY-BX-3BG"/>
@@ -242,6 +260,9 @@
                                                         <constraint firstAttribute="width" constant="30" id="8Jh-iK-6qM"/>
                                                     </constraints>
                                                     <state key="normal" title="Like" image="favor-icon"/>
+                                                    <connections>
+                                                        <action selector="didTapLike:" destination="2DL-Jd-Ag5" eventType="touchUpInside" id="bmS-KP-SK5"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8B-Dh-0Fg">
                                                     <rect key="frame" x="70" y="377" width="97" height="20"/>

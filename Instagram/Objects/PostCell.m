@@ -13,22 +13,35 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    //Setting correct color of the like button.
+    [self.likeButton setImage:[UIImage imageNamed:@"favor-icon"] forState:UIControlStateNormal];
+    [self.likeButton setImage:[UIImage imageNamed:@"favor-icon-red"] forState:UIControlStateSelected];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
-/**
-- (void)setPost:(Post *)post {
-    _post = post;
-    self.photoImageView.file = post[@"image"];
-    [self.photoImageView loadInBackground];
+- (IBAction)didTapLike:(id)sender {
+    //if post has already been liked
+    if ([sender isSelected]) {
+        //Update appearance to be gray.
+        [sender setSelected:NO];
+        //Update Post object.
+        self.post.likeCount = [NSNumber numberWithInt:[self.post.likeCount intValue] - 1];
+    } else { //if post has not been liked
+        //Update appearance to be gray.
+        [sender setSelected:YES];
+        //Update Post object.
+        self.post.likeCount = [NSNumber numberWithInt:[self.post.likeCount intValue] + 1];
+    }
+    //Update likes number label.
+    self.likesNumberLabel.text = [NSString stringWithFormat:@"%@ likes", self.post.likeCount];
+    //Update the object on Parse.
+    [self.post saveInBackground];
 }
- **/
+
 
 
 @end
