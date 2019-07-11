@@ -253,16 +253,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8B-Dh-0Fg">
-                                                    <rect key="frame" x="55" y="497" width="97" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="NME-3w-LRY"/>
-                                                        <constraint firstAttribute="width" constant="97" id="jXs-dY-tXx"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v3-Ha-Yqs">
                                                     <rect key="frame" x="15" y="489" width="30" height="30"/>
                                                     <constraints>
@@ -274,22 +264,63 @@
                                                         <action selector="didTapLike:" destination="2DL-Jd-Ag5" eventType="touchUpInside" id="bmS-KP-SK5"/>
                                                     </connections>
                                                 </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment-icon" translatesAutoresizingMaskIntoConstraints="NO" id="gBj-MS-I6U">
+                                                    <rect key="frame" x="50" y="487.66666666666669" width="35" height="35.000000000000057"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="35" id="9bR-pu-4XJ"/>
+                                                        <constraint firstAttribute="height" constant="35" id="dLZ-iY-ULV"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share-icon" translatesAutoresizingMaskIntoConstraints="NO" id="e7Z-HN-yTB">
+                                                    <rect key="frame" x="90" y="498" width="23" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="23" id="Eqo-4d-rtq"/>
+                                                        <constraint firstAttribute="height" constant="18" id="hLq-NY-d4U"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8B-Dh-0Fg">
+                                                    <rect key="frame" x="128" y="497" width="97" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="NME-3w-LRY"/>
+                                                        <constraint firstAttribute="width" constant="97" id="jXs-dY-tXx"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile-picture-icon" translatesAutoresizingMaskIntoConstraints="NO" id="zbD-bu-mhc">
+                                                    <rect key="frame" x="15" y="15" width="40" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="save-icon" translatesAutoresizingMaskIntoConstraints="NO" id="jOd-LZ-Ovp">
+                                                    <rect key="frame" x="381" y="495.66666666666669" width="23" height="23.000000000000057"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="23" id="2Oi-Zx-YBE"/>
+                                                        <constraint firstAttribute="width" constant="23" id="Zwh-jr-lL3"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="e7Z-HN-yTB" firstAttribute="leading" secondItem="gBj-MS-I6U" secondAttribute="trailing" constant="5" id="3jS-L5-sdM"/>
                                                 <constraint firstItem="7v3-Ha-Yqs" firstAttribute="top" secondItem="XCN-GE-oSy" secondAttribute="bottom" constant="10" id="8w3-r9-tiD"/>
+                                                <constraint firstItem="s8B-Dh-0Fg" firstAttribute="centerY" secondItem="e7Z-HN-yTB" secondAttribute="centerY" id="J53-0T-7WO"/>
+                                                <constraint firstItem="gBj-MS-I6U" firstAttribute="leading" secondItem="7v3-Ha-Yqs" secondAttribute="trailing" constant="5" id="KP0-W6-zc1"/>
                                                 <constraint firstItem="XCN-GE-oSy" firstAttribute="leading" secondItem="M7R-mf-2gf" secondAttribute="leading" id="OtI-vF-Zff"/>
                                                 <constraint firstItem="7v3-Ha-Yqs" firstAttribute="leading" secondItem="M7R-mf-2gf" secondAttribute="leading" constant="15" id="P9i-U6-bye"/>
+                                                <constraint firstItem="gBj-MS-I6U" firstAttribute="centerY" secondItem="7v3-Ha-Yqs" secondAttribute="centerY" constant="1" id="QSY-BV-mYC"/>
+                                                <constraint firstAttribute="trailing" secondItem="jOd-LZ-Ovp" secondAttribute="trailing" constant="10" id="Sj5-nm-aET"/>
                                                 <constraint firstItem="5PH-x0-E02" firstAttribute="top" secondItem="M7R-mf-2gf" secondAttribute="topMargin" constant="10" id="TYL-VG-hrx"/>
                                                 <constraint firstItem="OQr-zi-oxP" firstAttribute="leading" secondItem="M7R-mf-2gf" secondAttribute="leadingMargin" constant="10" id="Uae-o4-ouw"/>
                                                 <constraint firstAttribute="trailing" secondItem="XCN-GE-oSy" secondAttribute="trailing" id="WkU-J2-tJp"/>
+                                                <constraint firstItem="e7Z-HN-yTB" firstAttribute="centerY" secondItem="gBj-MS-I6U" secondAttribute="centerY" constant="2" id="Xdv-B7-TQA"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="OQr-zi-oxP" secondAttribute="bottom" constant="15" id="bha-2y-mEH"/>
                                                 <constraint firstItem="5PH-x0-E02" firstAttribute="leading" secondItem="M7R-mf-2gf" secondAttribute="leadingMargin" constant="50" id="c0n-ZI-6L1"/>
-                                                <constraint firstItem="s8B-Dh-0Fg" firstAttribute="centerY" secondItem="7v3-Ha-Yqs" secondAttribute="centerY" constant="3" id="d4e-G1-DnW"/>
+                                                <constraint firstItem="s8B-Dh-0Fg" firstAttribute="leading" secondItem="e7Z-HN-yTB" secondAttribute="trailing" constant="15" id="cCM-dF-TXq"/>
                                                 <constraint firstItem="OQr-zi-oxP" firstAttribute="trailing" secondItem="M7R-mf-2gf" secondAttribute="trailingMargin" id="exX-6Z-vGk"/>
                                                 <constraint firstItem="OQr-zi-oxP" firstAttribute="top" secondItem="7v3-Ha-Yqs" secondAttribute="bottom" constant="15" id="f3O-Ia-EiG"/>
                                                 <constraint firstItem="7v3-Ha-Yqs" firstAttribute="top" secondItem="XCN-GE-oSy" secondAttribute="bottom" constant="10" id="gL4-lK-FH7"/>
                                                 <constraint firstItem="XCN-GE-oSy" firstAttribute="top" secondItem="5PH-x0-E02" secondAttribute="bottom" constant="20" id="htB-eF-Ief"/>
-                                                <constraint firstItem="s8B-Dh-0Fg" firstAttribute="leading" secondItem="7v3-Ha-Yqs" secondAttribute="trailing" constant="10" id="ppZ-2U-VBj"/>
+                                                <constraint firstItem="jOd-LZ-Ovp" firstAttribute="centerY" secondItem="s8B-Dh-0Fg" secondAttribute="centerY" id="ynY-sQ-BeH"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
@@ -336,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ntx-vd-tsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-162" y="2623"/>
+            <point key="canvasLocation" x="-162.31884057971016" y="2622.554347826087"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="GTb-Su-HAI">
@@ -518,6 +549,7 @@
                 <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="iwe-hB-mja" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ofd-g8-RMm">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -551,11 +583,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="comment-icon" width="200" height="200"/>
         <image name="favor-icon" width="30" height="30"/>
         <image name="feed_tab" width="25" height="25"/>
         <image name="insta_camera_btn" width="25" height="25"/>
         <image name="instagram words" width="914" height="362"/>
+        <image name="profile-picture-icon" width="512" height="512"/>
         <image name="profile_tab" width="25" height="25"/>
+        <image name="save-icon" width="1600" height="1600"/>
+        <image name="share-icon" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tWQ-JY-ssb"/>

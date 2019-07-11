@@ -15,7 +15,7 @@
     [super awakeFromNib];
     
     //Setting correct color of the like button.
-    [self.likeButton setImage:[UIImage imageNamed:@"favor-icon"] forState:UIControlStateNormal];
+    [self.likeButton setImage:[UIImage imageNamed:@"white-heart-picture"] forState:UIControlStateNormal];
     [self.likeButton setImage:[UIImage imageNamed:@"favor-icon-red"] forState:UIControlStateSelected];
 }
 
