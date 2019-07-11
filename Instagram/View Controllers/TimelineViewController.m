@@ -126,10 +126,15 @@
 
 //FETCH POSTS
 - (void)fetchPosts {
+    
+    NSLog(@"%lu", (unsigned long)self.tabBarController.selectedIndex);
     // construct PFQuery
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
+    if (self.tabBarController.selectedIndex > 0){
+        [postQuery whereKey:@"author" equalTo:[PFUser currentUser]];
+    }
     postQuery.limit = 20;
     
     // fetch data asynchronously

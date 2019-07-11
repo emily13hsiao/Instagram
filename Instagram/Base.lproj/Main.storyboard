@@ -87,7 +87,7 @@
                         <outlet property="loginButton" destination="o4z-Wu-XQL" id="apS-Ab-aHv"/>
                         <outlet property="passwordTextField" destination="rgR-kx-AlC" id="VTz-R1-Ydq"/>
                         <outlet property="usernameTextField" destination="ARo-JA-mYT" id="EMV-yc-FB3"/>
-                        <segue destination="2Fa-i7-ShB" kind="show" identifier="loginSegue" id="qBT-eG-q8D"/>
+                        <segue destination="iwe-hB-mja" kind="show" identifier="loginSegue" id="qBT-eG-q8D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -224,7 +224,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hh0-Ak-d04">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="621" id="2DL-Jd-Ag5" customClass="PostCell">
@@ -336,7 +336,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ntx-vd-tsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="747.82608695652175" y="1656.521739130435"/>
+            <point key="canvasLocation" x="-162" y="2623"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="GTb-Su-HAI">
@@ -410,7 +410,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-59.420289855072468" y="3503.8043478260875"/>
+            <point key="canvasLocation" x="-1170" y="4442"/>
         </scene>
         <!--Post Details View Controller-->
         <scene sceneID="Yza-DE-YW0">
@@ -473,12 +473,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vdn-lQ-hOD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2301.449275362319" y="2666.576086956522"/>
+            <point key="canvasLocation" x="548" y="3515"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Timeline-->
         <scene sceneID="DMy-om-cQi">
             <objects>
                 <navigationController storyboardIdentifier="TimelineViewController" automaticallyAdjustsScrollViewInsets="NO" id="2Fa-i7-ShB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Timeline" id="3pj-dw-OT8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WkX-na-rTS">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -491,7 +492,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BW3-Cr-R64" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756.52173913043487" y="892.66304347826099"/>
+            <point key="canvasLocation" x="-161" y="1763"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TuE-YO-EPs">
@@ -509,7 +510,44 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MT3-nO-INn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-59.420289855072468" y="2667.3913043478265"/>
+            <point key="canvasLocation" x="-1120" y="3487"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="iJf-xJ-vP6">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="iwe-hB-mja" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ofd-g8-RMm">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="2Fa-i7-ShB" kind="relationship" relationship="viewControllers" id="UBf-Kh-kdI"/>
+                        <segue destination="egF-uZ-582" kind="relationship" relationship="viewControllers" id="NRe-yl-O7G"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pSg-If-fix" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756.52173913043487" y="892.66304347826099"/>
+        </scene>
+        <!--Your Posts-->
+        <scene sceneID="gpG-ux-uqO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="egF-uZ-582" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Your Posts" id="zMw-lT-Wgl"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6gi-a5-e71">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7aU-vB-9A7" kind="relationship" relationship="rootViewController" id="tWQ-JY-ssb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m6r-ym-5tp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492.753623188406" y="1790.217391304348"/>
         </scene>
     </scenes>
     <resources>
@@ -517,4 +555,7 @@
         <image name="insta_camera_btn" width="25" height="25"/>
         <image name="instagram words" width="914" height="362"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="tWQ-JY-ssb"/>
+    </inferredMetricsTieBreakers>
 </document>
