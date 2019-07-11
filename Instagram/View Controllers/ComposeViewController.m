@@ -22,6 +22,7 @@
     [self.pictureView setImage:self.image];
     self.captionLabel.layer.borderWidth = 1;
     self.captionLabel.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    self.captionLabel.layer.cornerRadius = 5;
 }
 
 /**

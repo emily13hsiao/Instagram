@@ -17,7 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.registerButton.layer.cornerRadius = 8;
+    self.registerButton.clipsToBounds = YES;
 }
 
 - (void)registerUser {
@@ -43,6 +45,9 @@
 
 - (IBAction)didTapRegister:(id)sender {
     [self registerUser];
+}
+- (IBAction)onTap:(id)sender {
+    [self.view endEditing:YES];
 }
 
 /*
