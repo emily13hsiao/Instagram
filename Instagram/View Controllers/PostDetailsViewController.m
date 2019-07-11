@@ -32,7 +32,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
     NSString *stringFromDate = [formatter stringFromDate:self.post.createdAt];
-    self.timestampLabel.text = stringFromDate;
+    self.timestampLabel.text = [NSString stringWithFormat:@"Posted on %@", stringFromDate];
     
     //set big image
     PFFileObject *img = self.post.image;
