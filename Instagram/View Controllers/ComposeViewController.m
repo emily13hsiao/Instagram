@@ -34,6 +34,7 @@
 - (IBAction)didTapShare:(id)sender {
     [Post postUserImage:self.image withCaption:self.captionLabel.text withCompletion:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
+        
 }
 - (IBAction)didTapBack:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

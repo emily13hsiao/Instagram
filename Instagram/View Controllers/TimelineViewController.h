@@ -10,9 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TimelineViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface TimelineViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
 
 @property (strong, nonatomic) UIImage *selectedImage;
+@property (assign, nonatomic) BOOL isMoreDataLoading;
 
 @end
 

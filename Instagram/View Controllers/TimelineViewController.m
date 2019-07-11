@@ -17,7 +17,7 @@
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray *posts;
+@property (strong, nonatomic) NSMutableArray *posts;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 
@@ -128,6 +128,9 @@
 - (void)fetchPosts {
     
     // construct PFQuery
+    
+    NSLog(@"Starting to fetch posts.");
+    
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
@@ -139,7 +142,40 @@
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
-            self.posts = [[NSArray alloc] initWithArray:posts];
+            self.posts = posts;
+            [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
+            NSLog(@"Finished fetching posts.");
+        }
+        else {
+            NSLog(@"Error fetching posts.");
+        }
+    }];
+}
+
+//SCROLL STUFF
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    int scrollViewContentHeight = self.tableView.contentSize.height;
+    int scrollOffsetThreshold = scrollViewContentHeight - self.tableView.bounds.size.height;
+    
+    // When the user has scrolled past the threshold, start requesting
+    if(scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
+        self.isMoreDataLoading = true;
+        [self loadMoreData];
+    }
+}
+
+-(void)loadMoreData{
+    
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.skip = self.posts.count;
+    
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            [self.posts addObjectsFromArray:posts];
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
         }
